@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:13306/security?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: Beathub12!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      format_sql: true
+      ddl-auto: update
+server:
+  port: 8100
+
+security:
+  oauth2:
+    client:
+      id: 570587036199-8pa51o0l4r9fo9ip89s4c6ugaml9kudg.apps.googleusercontent.com
+      client-secret: PV2wc6ZLedeojRNbqOFPFPB3
+      access-token-uri: https://www.googleapis.com/oauth2/v3/token
+      user-authorization-uri: https://accounts.google.com/o/oauth2/auth
+      token-name: oauth_token
+      authentication-scheme: query
+      client-authentication-scheme: profile email
+      scope: profile email
+
+    resource:
+      user-info-uri: https://www.googleapis.com/userinfo/v2/me
+      prefer-token-info: false
